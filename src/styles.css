@@ -1,0 +1,409 @@
+/* src/styles.css */
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --primary: #ea580c;
+  --primary-dark: #c2410c;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-700: #44403c;
+  --stone-900: #1c1917;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", serif;
+  background-color: #fafaf9;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Navigation */
+.navbar {
+  background: white;
+  border-bottom: 1px solid var(--stone-200);
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--stone-900);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 120px 0;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.25rem;
+  color: var(--stone-700);
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-orange {
+  background: var(--primary);
+  color: white;
+}
+.btn-orange:hover {
+  background: var(--primary-dark);
+}
+
+/* Forms & Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 400px;
+  position: relative;
+}
+.input-group {
+  margin-bottom: 20px;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--stone-700);
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--stone-200);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+/* Add to src/styles.css */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--stone-200);
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.5em;
+}
+.divider:not(:empty)::after {
+  margin-left: 0.5em;
+}
+
+.btn-social {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: white;
+  border: 1px solid var(--stone-200);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btn-social:hover {
+  background: #f9f9f9;
+}
+
+.btn-social svg {
+  width: 20px;
+  height: 20px;
+}
+/* Add to src/styles.css */
+
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Space between links and the login button */
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px; /* Space between About, Features, and Pricing */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--stone-700);
+  font-weight: 300; /* This makes the font "light" */
+  font-size: 15px;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--primary); /* Turns orange when you hover */
+}
+/* src/styles.css - New Sections */
+
+/* Features Section */
+.section-light {
+  background: white;
+  padding: 100px 0;
+}
+.section-gray {
+  background: #f5f5f4;
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  font-family: serif;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  background: #fafaf9;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--stone-200);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+.feature-card h3 {
+  color: var(--stone-900);
+  margin-bottom: 15px;
+}
+.feature-card p {
+  color: var(--stone-700);
+  line-height: 1.6;
+}
+
+/* About Section Split */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 20px 20px 0px var(--stone-200); /* Professional offset shadow */
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--stone-700);
+}
+
+/* Footer */
+.footer {
+  background: var(--stone-900);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+/* Replace your entire src/styles.css with this */
+:root {
+  --primary: #ea580c;
+  --primary-dark: #c2410c;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-700: #44403c;
+  --stone-900: #1c1917;
+}
+
+/* 1. Smooth Scrolling Enable */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fafaf9;
+}
+
+/* 2. Sticky Navbar Styles */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar {
+  padding: 1rem 0;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--stone-900);
+  font-family: serif;
+}
+
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--stone-700);
+  font-weight: 300;
+  font-size: 15px;
+  transition: 0.2s;
+}
+.nav-link:hover {
+  color: var(--primary);
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 0;
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-family: serif;
+}
+.hero p {
+  font-size: 1.25rem;
+  color: var(--stone-700);
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-orange {
+  background: var(--primary);
+  color: white;
+}
+.btn-orange:hover {
+  background: var(--primary-dark);
+}
+
+.section-gray {
+  background: #f5f5f4;
+  padding: 100px 0;
+}
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 15px 15px 0 var(--stone-200);
+}
+.about-text h2 {
+  font-size: 2.5rem;
+  font-family: serif;
+  margin-bottom: 25px;
+}
+.about-text p {
+  line-height: 1.8;
+  color: var(--stone-700);
+  margin-bottom: 20px;
+}
+.close-btn-style {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+}
+.close-btn-style:hover {
+  color: #333;
+}
